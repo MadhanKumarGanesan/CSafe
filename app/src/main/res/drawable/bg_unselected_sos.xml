@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval" >
+
+    <corners android:radius="40dp" />
+
+    <gradient
+        android:centerColor="@color/color_main_button_default"
+        android:endColor="@color/color_main_button_default"
+        android:startColor="@color/color_main_button_default" />
+
+    <padding
+        android:left="40dp"
+        android:right="40dp"
+        android:top="40dp"
+        android:bottom="40dp"/>
+
+</shape>

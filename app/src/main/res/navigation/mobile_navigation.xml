@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.madcodes.kavalanclone.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_help"
+        android:name="com.madcodes.kavalanclone.ui.help.HelpFragment"
+        android:label="@string/menu_help"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.madcodes.kavalanclone.ui.about.SlideshowFragment"
+        android:label="@string/menu_about"
+        tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_rate"
+        android:name="com.madcodes.kavalanclone.ui.rate.RateFragment"
+        android:label="@string/menu_rate_app"
+        tools:layout="@layout/fragment_rate" />
+
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.madcodes.kavalanclone.ui.share.ShareFragment"
+        android:label="@string/menu_share_wid_friends"
+        tools:layout="@layout/fragment_share" />
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.madcodes.kavalanclone.ui.logout.LogoutFragment"
+        android:label="@string/menu_share_wid_friends"
+        tools:layout="@layout/fragment_share" />
+
+    <fragment
+        android:id="@+id/nav_nearby"
+        android:name="com.madcodes.kavalanclone.ui.nearbyStations.NearbyStations"
+        android:label="@string/menu_near_by_stations"
+        tools:layout="@layout/fragment_nearby" />
+
+</navigation>
