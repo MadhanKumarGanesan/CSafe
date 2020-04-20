@@ -5,6 +5,10 @@ import android.view.Menu;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.madcodes.CSafe.Utils.CSafePreferences;
+import com.madcodes.CSafe.Utils.CommonClass;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -21,6 +25,7 @@ public class NavigationActivity extends AppCompatActivity {
     NavigationView navigationView;
     DrawerLayout drawer;
     NavController navController;
+    Gson gson = new GsonBuilder().disableHtmlEscaping().create();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +60,7 @@ public class NavigationActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+        System.out.println("User Relations : " + gson.toJson(CSafePreferences.getUserRelations()));
 
 /*        tv_name = (TextView) navigationView.findViewById(R.id.tv_name);
         tv_mobile = (TextView) navigationView.findViewById(R.id.tv_mobile);

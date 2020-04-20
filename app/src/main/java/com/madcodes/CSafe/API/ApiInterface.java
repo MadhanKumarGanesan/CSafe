@@ -2,9 +2,11 @@ package com.madcodes.CSafe.API;
 
 import com.madcodes.CSafe.Models.Requests.LoginRequest;
 import com.madcodes.CSafe.Models.Requests.RegistrationRequest;
+import com.madcodes.CSafe.Models.Requests.RelationVerifyRequest;
 import com.madcodes.CSafe.Models.Requests.SOSRequest;
 import com.madcodes.CSafe.Models.Responses.LoginResponse;
 import com.madcodes.CSafe.Models.Responses.RegistrationResponse;
+import com.madcodes.CSafe.Models.Responses.RelationVerifyResponse;
 import com.madcodes.CSafe.Models.Responses.SOSResponse;
 
 import retrofit2.Call;
@@ -21,6 +23,9 @@ public interface ApiInterface {
 
     @POST("mobilesos.php")
     Call<SOSResponse>mobilesos(@Body SOSRequest sosRequest);
+
+    @POST("mobilerelationverify.php")
+    Call<RelationVerifyResponse>mobilerelationverify(@Body RelationVerifyRequest relationVerifyRequest);
 
     /*@GET("GetTown")
     Call<TownResponse> GetTown();*/

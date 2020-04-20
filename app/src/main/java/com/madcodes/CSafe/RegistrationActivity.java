@@ -337,7 +337,14 @@ public class RegistrationActivity extends AppCompatActivity {
 
                     String otp = registrationResponse.getOtp();
                     String mobile = registrationResponse.getUser_details().getUser().getMobile();
+                    CommonClass.user_relations = new RegistrationResponse.UserDetails.UserRelation();
+                    CommonClass.user_relations = registrationResponse.getUser_details().getUserrelation();
 
+                    CSafePreferences.setUserRelations(gson.toJson(CommonClass.user_relations));
+                    System.out.println("User Relations : " + gson.toJson(CommonClass.user_relations));
+
+
+                    str_otp = otp;
                     custom_dialog(otp, mobile);
 
 
@@ -418,7 +425,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     String userId = loginResponse.getUser_id();
 
                     //Logics for OTP submit
-                    str_otp = otp;
+
                     // edt_mobilenumber.setEnabled(false);
 
                     //Adding Preferences
@@ -426,6 +433,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     CSafePreferences.setMsisdn(loginResponse.getUser_details().getUser().getMobile());
                     CSafePreferences.setUserName(loginResponse.getUser_details().getUser().getUsername());
 
+                    CSafePreferences.setIsLogin(true);
                     Intent intent = new Intent(RegistrationActivity.this, NavigationActivity.class);
                     startActivity(intent);
                     finish();

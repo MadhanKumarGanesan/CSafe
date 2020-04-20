@@ -45,7 +45,7 @@ public class RegistrationResponse {
         this.message = message;
     }
 
-    public class UserDetails {
+    public static class UserDetails {
         User user;
         UserRelation userrelation;
 
@@ -186,23 +186,27 @@ public class RegistrationResponse {
             }
         }
 
-        public class UserRelation {
+        public static class UserRelation {
 
 
             String id;
             String username;
+
             String relation1;
             String mobile1;
             String otp1;
             String verify1;
+
             String relation2;
             String mobile2;
             String otp2;
             String verify2;
+
             String relation3;
             String mobile3;
             String otp3;
             String verify3;
+
             String status;
 
 

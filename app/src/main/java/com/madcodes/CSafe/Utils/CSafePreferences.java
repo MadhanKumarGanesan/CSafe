@@ -13,6 +13,7 @@ public class CSafePreferences {
     private static final String IS_LOGIN = "is_login";
     private static final String SUBSCRIBER_NAME = "subcriber_name";
     private static final String EMAIL = "email";
+    private static final String USER_RELATIONS = "user_relations";
 
 
 
@@ -79,6 +80,23 @@ public class CSafePreferences {
         String subscriber_id = null;
         if (sharedPreferences != null) {
             subscriber_id = sharedPreferences.getString(SUBSCRIBER_ID, "");
+        }
+        return subscriber_id;
+    }
+
+    public static void setUserRelations(String value){
+        if (sharedPreferences != null) {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(USER_RELATIONS, value);
+            editor.apply();
+        }
+
+    }
+
+    public static String getUserRelations() {
+        String subscriber_id = null;
+        if (sharedPreferences != null) {
+            subscriber_id = sharedPreferences.getString(USER_RELATIONS, "");
         }
         return subscriber_id;
     }
