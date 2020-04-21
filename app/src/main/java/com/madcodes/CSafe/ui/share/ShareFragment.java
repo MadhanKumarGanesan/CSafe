@@ -35,7 +35,7 @@ public class ShareFragment extends Fragment {
 
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "http://csafe.msonet.co.in/CSafe.apk");
         sendIntent.setType("text/plain");
 
         Intent shareIntent = Intent.createChooser(sendIntent, null);

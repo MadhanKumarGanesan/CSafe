@@ -2,6 +2,7 @@ package com.madcodes.CSafe;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
@@ -48,9 +49,8 @@ public class NavigationActivity extends AppCompatActivity {
         drawer = findViewById(R.id.drawer_layout);
 
         /* */
-
         navigationView = findViewById(R.id.nav_view);
-
+        View header = navigationView.getHeaderView(0);
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_help, R.id.nav_about, R.id.nav_share, R.id.nav_rate, R.id.nav_logout)
@@ -62,10 +62,10 @@ public class NavigationActivity extends AppCompatActivity {
 
         System.out.println("User Relations : " + gson.toJson(CSafePreferences.getUserRelations()));
 
-/*        tv_name = (TextView) navigationView.findViewById(R.id.tv_name);
-        tv_mobile = (TextView) navigationView.findViewById(R.id.tv_mobile);
-        tv_name.setText(KavalanPreferences.getUserName());
-        tv_mobile.setText(KavalanPreferences.getMsisdn());*/
+        tv_name = (TextView) header.findViewById(R.id.tv_name);
+        tv_mobile = (TextView) header.findViewById(R.id.tv_mobile);
+        tv_name.setText(CSafePreferences.getUserName());
+        tv_mobile.setText(CSafePreferences.getMsisdn());
 
     }
 
